@@ -1,0 +1,45 @@
+<head>
+	<title>search-page</title>
+</head>
+<body>
+	{{> HEAD}}
+	{{> people}}
+</body>
+
+
+<template name="HEAD">
+<div class="container">
+	<h1>Cahoots Search Engine</h1>
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s6">
+				<input placeholder="Hier eingeben" type="text" class="validate search-query" id="search-query">
+				<label for="search-query">Nach Namen suchen</label>
+			</div>
+		</div>
+	</form>
+</div>
+</template>
+
+<template name = "people">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each searchresults.results}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{gender}}</td>
+        <td>{{email}}</td>
+        <td>{{phone}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
